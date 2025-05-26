@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HC_CheatTools", "HC_CheatTo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SVS_CheatTools", "SVS_CheatTools\SVS_CheatTools.csproj", "{462E6000-BE07-4812-B5B9-524E3D517C2F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AI_NoAIDoor", "AI_NoAIDoor\AI_NoAIDoor.csproj", "{C9CD7A79-A2F5-4C99-B38B-133997C85EA4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{462E6000-BE07-4812-B5B9-524E3D517C2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{462E6000-BE07-4812-B5B9-524E3D517C2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{462E6000-BE07-4812-B5B9-524E3D517C2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9CD7A79-A2F5-4C99-B38B-133997C85EA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9CD7A79-A2F5-4C99-B38B-133997C85EA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9CD7A79-A2F5-4C99-B38B-133997C85EA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9CD7A79-A2F5-4C99-B38B-133997C85EA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
