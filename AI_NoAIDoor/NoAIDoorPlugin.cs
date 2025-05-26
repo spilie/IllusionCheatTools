@@ -1,7 +1,9 @@
-﻿using AIProject;
+﻿using AIChara;
+using AIProject;
 using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;
+using KKAPI.Chara;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,16 +20,11 @@ namespace AI_NoAIDoor
 
         public const string GUID = "hakin.NoAIDoor";
         public const string Version = "1.0";
-
-        private static string _fullUserDataPath;
-
-
-
-        private void Start()
+        private void Awake()
         {
             _logger = base.Logger;
 
-            var h = Harmony.CreateAndPatchAll(typeof(NoAIDoorPlugin), GUID);
+             var h = Harmony.CreateAndPatchAll(typeof(NoAIDoorPlugin), GUID);
             Logger.LogInfo("NoAIDoorPlugin initialized.");
         }
 
@@ -36,11 +33,12 @@ namespace AI_NoAIDoor
         {
             [HarmonyPrefix]
             [HarmonyPatch(typeof(Actor), "SendEvent")]
-            static bool PreventAIDoorOpen(Actor __instance, EventType type)
+            static bool PreventAIDoorOpen(ref Actor __instance)
             {
-                if (type == EventType.DoorOpen)
+                if (__instance.EventKey == EventType.DoorOpen)
                 {
                     _logger.LogInfo($"Prevented AI {__instance.name} from opening door.");
+                    __instance.EventKey = EventType.DoorClose;
                     return false; // 阻止原始事件發送
                 }
 
