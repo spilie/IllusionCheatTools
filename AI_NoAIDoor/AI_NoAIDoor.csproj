@@ -51,8 +51,11 @@
       <HintPath>..\packages\IllusionLibs.AIGirl.Assembly-CSharp-firstpass.2020.5.29.5\lib\net46\Assembly-CSharp-firstpass.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="BehaviorDesigner.Runtime">
+      <HintPath>..\packages\BehaviorDesigner.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="BepInEx">
-      <HintPath>..\packages\BepInEx_x64_5.4.21.0\BepInEx\core\BepInEx.dll</HintPath>
+      <HintPath>..\Shared\BepInEx_x64_5.4.21.0\BepInEx\core\BepInEx.dll</HintPath>
     </Reference>
     <Reference Include="Cinemachine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\IllusionLibs.AIGirl.Cinemachine.2018.2.21.4\lib\net46\Cinemachine.dll</HintPath>

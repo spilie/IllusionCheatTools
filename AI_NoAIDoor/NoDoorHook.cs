@@ -1,4 +1,5 @@
 ﻿using AIProject;
+using BehaviorDesigner.Runtime.Tasks;
 using BepInEx.Logging;
 using HarmonyLib;
 
@@ -9,15 +10,17 @@ public static class NoDoorHook
     public static void SetLogger(ManualLogSource logger) => _logger = logger;
 
     [HarmonyPrefix]
-    [HarmonyPatch(typeof(Actor), nameof(Actor.EventKey))]
-    public static bool PreventAIDoorOpen(Actor __instance, EventType type)
+    [HarmonyPatch(typeof(AIProject.IsMatchEventType), "OnUpdate")]
+    public static bool Before_OnUpdate(ref TaskStatus __result, AIProject.IsMatchEventType __instance)
     {
-        if (type == EventType.DoorOpen)
+        if (__instance._targetKey == EventType.DoorOpen)
         {
-            _logger?.LogInfo($"[NoAIDoor] Blocked {__instance.CharaName} from opening door.");
-            return false;
+            // 攔截特定條件：不要讓 AI 判斷通過這個節點
+            __result = TaskStatus.Failure;
+            Debug.Log("[NoAIDoor] Prevented AI from evaluating DoorOpen behavior tree node.");
+            return false; // ❌ 阻止原始 OnUpdate 執行
         }
 
-        return true;
+        return true; // ✅ 其他情況正常執行
     }
 }
