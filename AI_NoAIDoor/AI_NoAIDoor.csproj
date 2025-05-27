@@ -52,7 +52,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="BehaviorDesigner.Runtime">
-      <HintPath>..\packages\BehaviorDesigner.Runtime.dll</HintPath>
+      <HintPath>.\BehaviorDesigner.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="BepInEx">
       <HintPath>..\Shared\BepInEx_x64_5.4.21.0\BepInEx\core\BepInEx.dll</HintPath>
@@ -137,6 +137,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NoDoorHook_BAK.cs" />
     <Compile Include="NoDoorHook.cs" />
     <Compile Include="NoAIDoorPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
