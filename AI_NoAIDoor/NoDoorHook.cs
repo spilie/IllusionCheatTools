@@ -15,7 +15,7 @@ public static class NoDoorHook
         return AccessTools.PropertySetter(typeof(AgentActor), "EventKey");
     }
 
-    public static void Prefix(ref EventType value)
+    public static void Prefix(ref EventType value, ref bool __runOriginal)
     {
         if (value == EventType.DoorOpen)
         {
